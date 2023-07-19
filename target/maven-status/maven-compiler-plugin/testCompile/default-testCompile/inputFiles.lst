@@ -1,7 +1,8 @@
-/Users/kasule/Work/wallethub/wallethub-review-test/src/test/java/pages/WritePostPage.java
-/Users/kasule/Work/wallethub/wallethub-review-test/src/test/java/pages/ReviewPage.java
-/Users/kasule/Work/wallethub/wallethub-review-test/src/test/java/pages/LoginHelper.java
-/Users/kasule/Work/wallethub/wallethub-review-test/src/test/java/pages/ProfilePage.java
-/Users/kasule/Work/wallethub/wallethub-review-test/src/test/java/pages/LoginPage.java
-/Users/kasule/Work/wallethub/wallethub-review-test/src/test/java/tests/ReviewHealthInsuranceTest.java
-/Users/kasule/Work/wallethub/wallethub-review-test/src/test/java/tests/FacebookStatusTest.java
+/Users/kasule/Work/wallethub/wallethub-e2e/src/test/java/tests/ReviewHealthInsuranceTest.java
+/Users/kasule/Work/wallethub/wallethub-e2e/src/test/java/pages/WritePostPage.java
+/Users/kasule/Work/wallethub/wallethub-e2e/src/test/java/pages/ReviewPage.java
+/Users/kasule/Work/wallethub/wallethub-e2e/src/test/java/pages/LoginPage.java
+/Users/kasule/Work/wallethub/wallethub-e2e/src/test/java/pages/LoginHelper.java
+/Users/kasule/Work/wallethub/wallethub-e2e/src/test/java/pages/ProfilePage.java
+/Users/kasule/Work/wallethub/wallethub-e2e/src/test/java/tests/FacebookStatusTest.java
+/Users/kasule/Work/wallethub/wallethub-e2e/src/test/java/utils/PropertiesLoader.java

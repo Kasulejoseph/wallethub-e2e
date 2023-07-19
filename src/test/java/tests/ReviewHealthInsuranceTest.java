@@ -1,5 +1,7 @@
 package tests;
 
+import java.util.Properties;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,22 +14,28 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.LoginPage;
 import pages.ProfilePage;
 import pages.ReviewPage;
+import utils.PropertiesLoader;
 
 public class ReviewHealthInsuranceTest {
     private WebDriver driver;
     private LoginPage loginPage;
     private ProfilePage profilePage;
     private ReviewPage reviewPage;
+    private Properties properties;
 
     @BeforeEach
     public void setup() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
         // Initialize the page objects
         loginPage = new LoginPage(driver);
         reviewPage = new ReviewPage(driver);
         profilePage = new ProfilePage(driver);
+        properties = new Properties();
 
+        // Load properties from the file
+        properties = PropertiesLoader.loadProperties("messages.properties");
     }
 
     @AfterEach
@@ -37,12 +45,15 @@ public class ReviewHealthInsuranceTest {
 
     @Test
     public void testReviewHealthInsurance() {
-        String productName = "Test Insurance Company";
-        String healthInsuranceText = "Health Insurance";
-        String emailAddress = "kasule08joseph@gmail.com";
-        String password = "Admin@123";
-        String loginUrl = "https://wallethub.com/join/login";
-        String profileUrl = "https://wallethub.com/profile/13732055i";
+        String productName = properties.getProperty("product.name");
+        String healthInsuranceText = properties.getProperty("product.insurance");
+        String emailAddress = properties.getProperty("login.wallethub.emailAddress");
+        String password = properties.getProperty("login.password");
+        String loginUrl = properties.getProperty("login.wallethub.url");
+        String profileUrl = properties.getProperty("profile.url");
+        String myWalletURL = properties.getProperty("login.redirect.url");
+        String expectedURLPattern = properties.getProperty("review.redirect.url");
+
 
         // Generate a random review text
         Faker faker = new Faker();
@@ -54,7 +65,7 @@ public class ReviewHealthInsuranceTest {
         loginPage.getLoginHelper().enterPassword(password);
         loginPage.getLoginHelper().clickLoginButton();
         // Assert the login page assertions
-        loginPage.assertLoginPageAssertions();
+        loginPage.assertLoginPageAssertions(myWalletURL);
 
         // Navigate to the review page
         driver.get(profileUrl);
@@ -79,10 +90,9 @@ public class ReviewHealthInsuranceTest {
         // Click the submit button
         reviewPage.clickSubmitButton();
 
-        
         // verify review
         profilePage.hoverOverUserProfile();
         profilePage.clickProfileLink();
-        profilePage.verifyProfilePage();
+        profilePage.verifyProfilePage(expectedURLPattern);
     }
 }

@@ -15,7 +15,6 @@ public class LoginPage {
     private LoginHelper loginHelper;
 
     private By userButton = By.cssSelector(".brgm-user span");
-    private String myWalletURL = "https://wallethub.com/profile/test-insurance-company-13732055i";
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -40,7 +39,7 @@ public class LoginPage {
         return userButtonElement.isDisplayed();
     }
 
-    public void assertLoginPageAssertions() {
+    public void assertLoginPageAssertions(String myWalletURL) {
         assertTrue(isRedirectedToValidURL(myWalletURL), "Assertion failed: redirection to invalid URL.");
         assertTrue(isUserButtonDisplayed(), "Assertion failed: user button does not exist.");
     }

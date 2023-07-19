@@ -15,8 +15,6 @@ public class ProfilePage {
     private By recommendationTitle = By.cssSelector("h2.pr-rec-title");
     private By companyName = By.cssSelector("a[href*='test-insurance-company']");
 
-    private String expectedURLPattern = "https://wallethub\\.com/profile/\\d+i";
-
     public ProfilePage(WebDriver driver) {
         this.driver = driver;
         this.actions = new Actions(driver);
@@ -51,7 +49,7 @@ public class ProfilePage {
         return companyNameElement.getText().equals(insuranceCompany);
     }
 
-    public void verifyProfilePage() {
+    public void verifyProfilePage(String expectedURLPattern) {
         String currentURL = getCurrentURL();
         assert currentURL.matches(expectedURLPattern) : "Assertion failed: Direction to URL is incorrect.";
 
