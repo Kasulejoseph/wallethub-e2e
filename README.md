@@ -1,9 +1,9 @@
 
-#Testcase 1
+## Testcase #1
 
 Login to facebook and post a status message
 
-#Testcase 2
+## Testcase #2
 
 Create a light user account in [URL](https://wallethub.com/join/light) and uncheck the checkbox to get your free credit score and report. This is the account you should be using for this test. Then simulate the following actions:
 
@@ -22,10 +22,10 @@ Create a light user account in [URL](https://wallethub.com/join/light) and unche
     7. Go to [URL](https://wallethub.com/profile/) and assert that you can see the review.
 
 
-## How to execute test cases
-### Testcase #1
+### Test case execution command
+#### Testcase #1
 ```mvn test -Dtest=FacebookStatusTest#testPostStatusMessage```
 
-### Testcase #2
+#### Testcase #2
 ```mvn test -Dtest=ReviewHealthInsuranceTest#testReviewHealthInsurance```
 
