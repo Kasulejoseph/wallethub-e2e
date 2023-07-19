@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.example.ReviewHealthInsuranceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 106.4 s -- in com.example.ReviewHealthInsuranceTest
