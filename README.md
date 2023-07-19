@@ -29,3 +29,8 @@ Create a light user account in [URL](https://wallethub.com/join/light) and unche
 #### Testcase #2
 ```mvn test -Dtest=ReviewHealthInsuranceTest#testReviewHealthInsurance```
 
+### How to change login credentials
+To modify the login credentials for the test cases, follow these steps:
+1. Go to the `messages.properties` file, which can be found inside the `src/test/resources` directory.
+2. For the Facebook test case, change the values of `login.emailAddress` and `login.password` to your desired credentials.
+3. For the WalletHub test case, update `login.wallethub.emailAddress` and `login.password` if you wish to change the email and password, respectively.
